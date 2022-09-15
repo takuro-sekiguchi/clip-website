@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, rgba(7,140,140,1) 0%, rgba(127,127,233,1) 48%, rgba(0,212,255,1) 100%);
+}
+
+.clip-bg {
+  background-image: url(images/bg.jpg);
+  height: 100vh;
+  clip-path: polygon(100% 0, 100% 60%, 0 100%, 0 40%);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.clip-bg::after {
+  content: "";
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.2;
+  position: absolute;
+}
+
+.clip-bg h1 {
+  color: white;
+  font-size: 5rem;
+  text-shadow: 2px 2px 2px #333;
+  z-index: 100;
+}
+
+.clip-bg button {
+  position: absolute;
+  z-index: 1;
+  top: 65%;
+  left: 20%;
+  padding: 20px 50px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.clip-bg button:hover {
+  background-color: rgb(166, 166, 166);
+}
+
+.clip-bg button a {
+  text-decoration: none;
+  color: white;
+}
+
+
+nav {
+  position: absolute;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+nav p {
+  color: white;
+  font-weight: bold;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 60%;
+  }
+}
